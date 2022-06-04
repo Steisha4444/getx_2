@@ -12,15 +12,15 @@ class ToDosPage extends GetView<ToDosController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('ToDosPage')),
-        body: SafeArea(
-            child: GetBuilder<ToDosController>(
-          builder: (_) => Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              children: [AddToDoForm(), Expanded(child: ToDoList())],
-            ),
+      appBar: AppBar(title: Text('ToDosPage')),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [AddToDoForm(), Expanded(child: ToDoList())],
           ),
-        )));
+        ),
+      ),
+    );
   }
 }

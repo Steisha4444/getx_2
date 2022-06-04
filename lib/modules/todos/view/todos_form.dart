@@ -39,21 +39,26 @@ class AddToDoForm extends GetView<ToDosController> {
           ],
         ),
         SizedBox(height: 12),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            controller.isInEditMode
-                ? Button(
-                    text: "Save",
-                    color: Colors.blue,
-                    onTap: controller.onSaveEdit,
-                  )
-                : Button(
-                    text: "Add",
-                    color: Colors.blueGrey,
-                    onTap: controller.onAdd,
-                  ),
-          ],
+        GetX<ToDosController>(
+         
+          builder: (_) {
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                controller.isInEditMode
+                    ? Button(
+                        text: "Save",
+                        color: Colors.blue,
+                        onTap: controller.onSaveEdit,
+                      )
+                    : Button(
+                        text: "Add",
+                        color: Colors.blueGrey,
+                        onTap: controller.onAdd,
+                      ),
+              ],
+            );
+          },
         )
       ],
     ));
